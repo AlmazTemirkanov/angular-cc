@@ -1,0 +1,85 @@
+<div class="d-flex justify-content-around container mb-4">
+  <input [(ngModel)]="select" />
+  <ejs-daterangepicker
+    class="datePicker"
+    (ngModelChange)="onChange($event)"
+    [ngModel]="range"
+    [startDate]="start"
+    [endDate]="end"
+  ></ejs-daterangepicker>
+</div>
+<table class="table text-center container">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CSI</th>
+      <th scope="col">Логин</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Офисы</th>
+      <th scope="col">Руководитель</th>
+      <th scope="col">Отделение</th>
+    </tr>
+  </thead>
+  <div *ngIf="loading" class="loading">
+    <svg
+      version="1.1"
+      id="L6"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 100 100"
+      enable-background="new 0 0 100 100"
+      xml:space="preserve"
+    >
+      <rect
+        fill="none"
+        stroke="#000"
+        stroke-width="4"
+        x="25"
+        y="25"
+        width="50"
+        height="50"
+      >
+        <animateTransform
+          attributeName="transform"
+          dur="0.5s"
+          from="0 50 50"
+          to="180 50 50"
+          type="rotate"
+          id="strokeBox"
+          attributeType="XML"
+          begin="rectBox.end"
+        />
+      </rect>
+      <rect x="27" y="27" fill="#000" width="46" height="50">
+        <animate
+          attributeName="height"
+          dur="1.3s"
+          attributeType="XML"
+          from="50"
+          to="0"
+          id="rectBox"
+          fill="freeze"
+          begin="0s;strokeBox.end"
+        />
+      </rect>
+    </svg>
+  </div>
+  <tbody class="tbody" *ngFor="let info of response; let idx = index">
+    <tr>
+      <th scope="row">{{ idx + 1 }}</th>
+      <td *ngIf="info[2] <= 7.5; else elseBlock" style="color: red">
+        {{ info[2] }}
+      </td>
+      <ng-template #elseBlock>
+        <td>{{ info[2] }}</td></ng-template
+      >
+      <td>{{ info[3] }}</td>
+      <td>{{ info[1] }}</td>
+      <td>{{ info[4] }}</td>
+      <td>{{ info[5] }}</td>
+      <td>{{ info[6] }}</td>
+    </tr>
+  </tbody>
+</table>
