@@ -81,13 +81,13 @@
   >
     <tr>
       <th scope="row">{{ idx + 1 }}</th>
-      <td *ngIf="info[2] <= 7.5; else elseBlock" style="color: red">
-        {{ info[2] }}
+      <td *ngIf="info[1] <= 7.5; else elseBlock" style="color: red">
+        {{ info[1] }}
       </td>
       <ng-template #elseBlock>
-        <td>{{ info[2] }}</td></ng-template
+        <td>{{ info[1] }}</td></ng-template
       >
-      <td>{{ info[1] }}</td>
+      <td>{{ info[2] }}</td>
       <td>{{ info[0] }}</td>
       <td>{{ info[3] }}</td>
       <td>{{ info[4] }}</td>

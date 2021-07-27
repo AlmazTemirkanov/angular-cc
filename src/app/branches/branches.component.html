@@ -78,16 +78,7 @@
     </tr>
   </tbody>
 </table>
+
 <div class="chart-wrapper container">
-  <canvas
-    baseChart
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartPlugins"
-    [legend]="barChartLegend"
-    [chartType]="barChartType"
-    [colors]="barColor"
-  >
-  </canvas>
+  <div id="chartdiv" style="width: 100%; height: 500px"></div>
 </div>
