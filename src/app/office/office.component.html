@@ -6,6 +6,13 @@
     [startDate]="start"
     [endDate]="end"
   ></ejs-daterangepicker>
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    (click)="exportAsXLSX()"
+  >
+    Скачать в Excel
+  </button>
 </div>
 <form>
   <div class="mb-3">

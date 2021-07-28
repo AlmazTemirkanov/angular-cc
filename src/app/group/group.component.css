@@ -13,3 +13,7 @@
 .loading svg {
   width: 60px;
 }
+
+.export {
+  border: none;
+}

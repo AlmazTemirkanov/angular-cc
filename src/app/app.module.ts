@@ -11,12 +11,22 @@ import { TabsComponent } from "./tabs/tabs.component";
 import { TabComponent } from "./tabs/tab.component";
 import { AppComponent } from "./app.component";
 import { EmployeeComponent } from "./employee/employee.component";
-import { GroupComponent } from './group/group.component';
-import { OfficeComponent } from './office/office.component';
-import { BranchesComponent } from './branches/branches.component';
+import { GroupComponent } from "./group/group.component";
+import { OfficeComponent } from "./office/office.component";
+import { BranchesComponent } from "./branches/branches.component";
+
+import { ExcelService } from "./excel.service";
 
 @NgModule({
-  declarations: [AppComponent, TabsComponent, TabComponent, EmployeeComponent, GroupComponent, OfficeComponent, BranchesComponent],
+  declarations: [
+    AppComponent,
+    TabsComponent,
+    TabComponent,
+    EmployeeComponent,
+    GroupComponent,
+    OfficeComponent,
+    BranchesComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -25,7 +35,7 @@ import { BranchesComponent } from './branches/branches.component';
     DateRangePickerModule,
     ChartsModule,
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, ExcelService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

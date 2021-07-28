@@ -2,13 +2,19 @@ import { Component, OnInit } from "@angular/core";
 import { DatePipe } from "@angular/common";
 import { HttpClient } from "@angular/common/http";
 
+import { ExcelService } from "../excel.service";
+
 @Component({
   selector: "app-group",
   templateUrl: "./group.component.html",
   styleUrls: ["./group.component.css"],
 })
 export class GroupComponent implements OnInit {
-  constructor(private http: HttpClient, private datePipe: DatePipe) {}
+  constructor(
+    private http: HttpClient,
+    private datePipe: DatePipe,
+    private excelService: ExcelService
+  ) {}
   searchText: any;
   loading: boolean;
   response: any;
@@ -20,8 +26,8 @@ export class GroupComponent implements OnInit {
 
   public end: Date = new Date();
 
-  valueChange(event: any) {
-    this.selectGroup = event.target.value;
+  exportAsXLSX(): void {
+    this.excelService.exportAsExcelFile(this.response, "ОПиО");
   }
   onChange(event: any) {
     this.range = event;

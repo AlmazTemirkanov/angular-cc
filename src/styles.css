@@ -1,0 +1,6 @@
+@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+@import url(../node_modules/@syncfusion/ej2-angular-calendars/styles/material.css);
+@import url(../node_modules/@syncfusion/ej2-buttons/styles/material.css);
+@import url(../node_modules/@syncfusion/ej2-icons/styles/material.css);
+@import url(../node_modules/@syncfusion/ej2-popups/styles/material.css);
+@import url(../node_modules/@syncfusion/ej2-inputs/styles/material.css);
