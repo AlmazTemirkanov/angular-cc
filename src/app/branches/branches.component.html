@@ -7,14 +7,27 @@
     [endDate]="end"
   ></ejs-daterangepicker>
 </div>
+<form>
+  <div class="mb-3">
+    <input
+      type="search"
+      class="form-control container mb-4"
+      name="search"
+      [(ngModel)]="searchText"
+      placeholder=" Поиск по КЦ"
+    />
+  </div>
+</form>
 <table class="table text-center container">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">CSI</th>
       <th scope="col">Количество оценок</th>
-      <th scope="col">Руководитель</th>
+      <th scope="col">Агент ID</th>
       <th scope="col">Отделение</th>
+      <th scope="col">Группа</th>
+      <th scope="col">Руководитель</th>
     </tr>
   </thead>
   <div *ngIf="loading" class="loading">
@@ -63,7 +76,10 @@
       </rect>
     </svg>
   </div>
-  <tbody class="tbody" *ngFor="let info of response; let idx = index">
+  <tbody
+    class="tbody"
+    *ngFor="let info of response | filter: searchText; let idx = index"
+  >
     <tr>
       <th scope="row">{{ idx + 1 }}</th>
       <td *ngIf="info[0] <= 7.5; else elseBlock" style="color: red">
@@ -75,10 +91,10 @@
       <td>{{ info[1] }}</td>
       <td>{{ info[2] }}</td>
       <td>{{ info[3] }}</td>
+      <td>{{ info[4] }}</td>
+      <td>{{ info[5] }}</td>
     </tr>
   </tbody>
 </table>
 
-<div class="chart-wrapper container">
-  <div id="chartdiv" style="width: 100%; height: 500px"></div>
-</div>
+

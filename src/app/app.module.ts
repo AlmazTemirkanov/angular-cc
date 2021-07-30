@@ -16,6 +16,8 @@ import { OfficeComponent } from "./office/office.component";
 import { BranchesComponent } from "./branches/branches.component";
 
 import { ExcelService } from "./excel.service";
+import { NpsChartComponent } from './nps-chart/nps-chart.component';
+import { CsiChartComponent } from './csi-chart/csi-chart.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ExcelService } from "./excel.service";
     GroupComponent,
     OfficeComponent,
     BranchesComponent,
+    NpsChartComponent,
+    CsiChartComponent,
   ],
   imports: [
     BrowserModule,

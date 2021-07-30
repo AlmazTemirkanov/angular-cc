@@ -32,7 +32,7 @@ export class EmployeeComponent implements OnInit {
 
     this.http
       .get(
-        "http://172.28.141.23:8282/api/v2/retail/" +
+        "http://172.28.141.23:8282/api/v1/all/" +
           this.select +
           "/" +
           this.selected
